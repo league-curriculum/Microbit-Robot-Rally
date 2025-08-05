@@ -1,0 +1,48 @@
+# theme: jekyll-theme-minimal
+# remote_theme: "jekyll/minima@2.5-stable"
+
+# theme: just-the-docs
+remote_theme: just-the-docs/just-the-docs
+
+# Note, we are using version 2.5, so you shoudl 
+# read these instuctions, not the ones at the HEAD of the
+# master branch
+# https://github.com/jekyll/minima/blob/2.5-stable/README.md
+
+title: Hour of Microbit
+
+description: >
+  Introduction to the BBC Micro:bit, an amazing, tiny computer that you can program!
+  Learn programming, robotics, and how to create games with friends.
+
+logo: https://images.jointheleague.org/logos/figures_girl.png
+
+author:
+  name: Andy M. Azing
+  email: "student@jointheleague.org"
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-default-layout
+
+header_pages:
+  - about.md
+  - intro.md
+  - lessons/index.md
+
+
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/league-curriculum/HourofMicrobit" # the github URL for your repo
+gh_edit_branch: "jekyl" # the branch that your docs is served from
+# gh_edit_source: docs # the source that your files originate from
+gh_edit_view_mode: "tree" # "tree" or "edit" if you wan
+
+
+callouts:
+  tip:
+    title: Tip
+    color: green
+  hint:
+    title: Hint
+    color: blue
