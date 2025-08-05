@@ -9,9 +9,10 @@ nav_order: 1
 This site will describe several games and contests you can run with a group of
 students using the Micro:bit, Cutebots and Joystick:bit joysticks. 
 
+* [Games](games)
+* [Technical Details](tech)
+
 [Get Started!](/intro)
 
 
----
 
-*Made with ❤️ by The LEAGUE and funded 💵 by the Itzkowitch Foundation.*

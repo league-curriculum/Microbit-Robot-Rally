@@ -1,0 +1,29 @@
+---
+layout: page
+title: Games
+nav_order: 2
+---
+
+# Game Ideas
+
+## Basic Robot Race
+
+Arrange tiles into a track, with a tape line for start an finish. Robots race around the track. 
+
+Variations:
+* Race backwards.
+
+## Obstacle Race
+
+Some students race around the track, other students create moving obstacles
+that are either remote controlled or automated using the sonar and other sensors. 
+
+
+## Tag 
+
+One robot is "it" and can tag other robots by bumping it from behind
+
+
+## Hungry Hippos
+
+Players collect blocks or balls with the gripper or dozer attachment. 
