@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Games
-nav_order: 2
+nav_order: 30
 ---
 
 # Game Ideas

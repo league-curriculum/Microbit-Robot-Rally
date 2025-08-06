@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Intro to Microbit
-nav_order: 2
+nav_order: 20
 ---
 
 # Intro to Microbit

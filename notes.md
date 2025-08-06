@@ -1,3 +1,9 @@
+---
+layout: home
+title: Development Notes
+nav_order: 100
+---
+
 
 # Development Notes
 
