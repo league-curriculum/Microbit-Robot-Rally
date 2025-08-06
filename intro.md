@@ -7,7 +7,7 @@ nav_order: 2
 # Intro to Microbit
 
 
-The Micro:bit is a microntroller, a small computer that has a lot
+The Micro:bit is a microcontroller, a small computer that has a lot
 of extra parts to make it more useful. The computer CPU in your laptop
 computer is designed to be very powerfull and do only a few things well. Everything
 else that a cimputer night have to do, such as display images on a monitor

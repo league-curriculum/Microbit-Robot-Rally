@@ -18,8 +18,8 @@ description: >
 logo: https://images.jointheleague.org/logos/figures_girl.png
 
 author:
-  name: Andy M. Azing
-  email: "student@jointheleague.org"
+  name: Eric Busboom
+  email: "eric.busboom@jointheleague.org"
 
 plugins:
   - jekyll-remote-theme
