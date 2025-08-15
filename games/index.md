@@ -18,11 +18,9 @@ Variations:
 Some students race around the track, other students create moving obstacles
 that are either remote controlled or automated using the sonar and other sensors. 
 
-
 ## Tag 
 
 One robot is "it" and can tag other robots by bumping it from behind
-
 
 ## Hungry Hippos
 
