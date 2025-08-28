@@ -21,11 +21,21 @@ strip what ever robot they get.
 
 Some issues they will have to overcome:
 
-* Wheelies
+* Wheeliesß
 * Gripping objects
 * Other aspects of the games. 
 
 Give the students a series of challenges that require solving specific problems. 
 
 
-To encourage students to help other students, make a rule: no one gets to run their robot until 3/4 or all of the class is ready to run their robots. 
+To encourage students to help other students, make a rule: no one gets to run
+their robot until 3/4 or all of the class is ready to run their robots. 
+
+## Setup
+
+Microbits are marked with a colored dot to indicate what program they are running:
+
+* Red: Joystick
+* Blue: Robot
+
+Don't mix them up, and don't Reprogram them. You should have a second set of unmarked microbits that students can reprogram. 
