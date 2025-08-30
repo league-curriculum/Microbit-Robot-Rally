@@ -16,3 +16,8 @@ nav_order: 40
 * [pxt-cutebot](https://github.com/League-Microbit/pxt-cutebot). League version of the Elecfreaks Cutebot extension
 * [pxt-leagueir](https://github.com/League-Microbit/pxt-leagueir). IR Transmitter and receiver. 
 * [pxt-radioext](https://github.com/League-Microbit/pxt-radioext). Radio extensions for custom packets and channel negotiation. 
+
+# Others
+
+* [Part Designer](https://marian42.de/partdesigner/) You can find the source code for this project [on Github.](https://github.com/marian42/partdesigner)
+

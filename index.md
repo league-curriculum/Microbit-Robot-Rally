@@ -19,6 +19,7 @@ The processor for both the Cutebot and the Joystick:bit is a Micro:bit, and the 
 * [Programs](programs)
 * [Technical Details](tech)
 * [Development Notes](notes)
+* [3D Printed Parts](3d)
 
 
 
