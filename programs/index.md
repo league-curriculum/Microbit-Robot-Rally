@@ -7,8 +7,8 @@ nav_order: 40
 
 # User Programs
 
-* [Joystick](https://makecode.microbit.org/S60951-31287-95241-93802)
-* Cutebot [Share](https://makecode.microbit.org/S02656-80574-03454-98135), [Repo](https://github.com/League-Microbit/remote-cutebot)
+* Joystick [Share](https://makecode.microbit.org/S29867-07006-10286-26715), [Repo](https://github.com/League-Microbit/Remote-Joystick.git))
+* Cutebot [Share](https://makecode.microbit.org/S02656-80574-03454-98135), [Repo](https://github.com/League-Microbit/remote-cutebot.git)
 
 # Libraries
 
