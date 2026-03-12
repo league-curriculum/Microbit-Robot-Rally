@@ -11,7 +11,7 @@ nav_order: 40
 * Cutebot 🔵 [Share](https://makecode.microbit.org/S02656-80574-03454-98135), [Repo](https://github.com/League-Microbit/remote-cutebot.git)
 
 
-To load man devices, use the `microbit-loader` program in the repo for this website. 
+To load many devices, use the `microbit-loader` program in the repo for this website. 
 
 # Libraries
 
