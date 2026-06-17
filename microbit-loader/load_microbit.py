@@ -97,7 +97,7 @@ def copy_hex(hex_file: str) -> None:
     """Copy hex file to the micro:bit volume."""
     src = os.path.join(os.path.dirname(os.path.abspath(__file__)), hex_file)
     dst = os.path.join(MICROBIT_VOLUME, hex_file)
-    shutil.copy2(src, dst)
+    shutil.copyfile(src, dst)
 
 
 def main():
@@ -122,9 +122,13 @@ def main():
 
         count += 1
         draw_status(label, dot, f"Copying {hex_file} ...", count)
-        copy_hex(hex_file)
 
-        draw_status(label, dot, "Done! Remove device and plug in the next one.", count)
+        try:
+            copy_hex(hex_file)
+        except OSError as exc:
+            draw_status(label, dot, f"Copy failed: {exc}. Remove device and try again.", count)
+        else:
+            draw_status(label, dot, "Done! Remove device and plug in the next one.", count)
 
         while os.path.isdir(MICROBIT_VOLUME):
             time.sleep(POLL_INTERVAL)
