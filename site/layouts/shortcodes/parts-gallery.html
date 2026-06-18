@@ -3,14 +3,21 @@
 {{- if $items -}}
 <div class="part-grid">
   {{- range $items }}
+  {{- $stl := (printf "parts/%s.stl" .slug) | relURL -}}
   <div class="part-card">
-    <a class="part-preview" href="{{ .editUrl }}" title="Edit {{ .name }} in Parts Designer">
+    {{- if .editUrl }}
+    <a class="part-preview" href="{{ .editUrl }}" target="_blank" rel="noopener" title="Edit {{ .name }} in Parts Designer">
       {{- if .hasPreview }}<img src="{{ (printf "parts/%s.png" .slug) | relURL }}" alt="{{ .name }} preview" loading="lazy" width="320" height="320">{{ end -}}
     </a>
+    {{- else }}
+    <a class="part-preview" href="{{ $stl }}" download title="Download {{ .name }}">
+      {{- if .hasPreview }}<img src="{{ (printf "parts/%s.png" .slug) | relURL }}" alt="{{ .name }} preview" loading="lazy" width="320" height="320">{{ end -}}
+    </a>
+    {{- end }}
     <div class="part-name">{{ .name }}</div>
     <div class="part-actions">
-      <a class="part-dl" href="{{ (printf "parts/%s.stl" .slug) | relURL }}" download>&#8595; STL</a>
-      <a class="part-edit" href="{{ .editUrl }}" target="_blank" rel="noopener">&#9998; Edit</a>
+      <a class="part-dl" href="{{ $stl }}" download>&#8595; STL</a>
+      {{- with .editUrl }}<a class="part-edit" href="{{ . }}" target="_blank" rel="noopener">&#9998; Edit</a>{{ end -}}
     </div>
   </div>
   {{- end }}
