@@ -1,0 +1,236 @@
+/* ---------------------------------------------------------------
+   Custom styles for Robot Explorers
+   Loaded by baseof.html via resources.Get "css/custom.css"
+   --------------------------------------------------------------- */
+
+/* Homepage lesson blurbs ----------------------------------------- */
+.lesson-blurbs {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.lesson-blurbs > li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+.lesson-blurbs > li:last-child { border-bottom: 0; }
+
+.lesson-link {
+  font-weight: 600;
+  display: inline-block;
+}
+
+.lesson-blurb {
+  font-size: 0.92rem;
+  color: var(--color-fg-2);
+  margin-top: 0.15rem;
+  line-height: 1.45;
+}
+.lesson-blurb p { margin: 0; }
+
+/* At-a-glance strip ---------------------------------------------- */
+.at-a-glance {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.8rem 0 0.4rem;
+}
+
+.glance-badge {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-subtle);
+  min-width: 5rem;
+}
+
+.glance-label {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-fg-muted);
+  font-weight: 700;
+}
+
+.glance-value {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-fg-1);
+}
+
+/* Opening concept ------------------------------------------------ */
+.opening-concept .opening-text {
+  font-size: 1.08rem;
+  line-height: 1.5;
+  padding: 0.85rem 1rem;
+  background: var(--color-bg-warm);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+.opening-concept .opening-text p { margin: 0; }
+.opening-concept .opening-text p + p { margin-top: 0.5rem; }
+
+/* Run sheet ------------------------------------------------------ */
+.run-segments {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.run-segment {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #fff;
+  padding: 0.7rem 0.85rem;
+}
+
+.run-segment-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.run-time {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-bg-warm);
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-xs);
+  white-space: nowrap;
+}
+
+.run-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-fg-1);
+  flex: 1;
+}
+
+.run-pl {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--color-fg-muted);
+  border: 1px solid var(--color-border);
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-xs);
+}
+
+.run-cue {
+  font-size: 0.94rem;
+  color: var(--color-fg-2);
+  margin: 0 0 0.45rem;
+  line-height: 1.45;
+}
+
+.run-details {
+  margin: 0 0 0.45rem;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+  color: var(--color-fg-1);
+}
+.run-details li { margin-bottom: 0.18rem; }
+.run-details li p { margin: 0; display: inline; }
+
+.run-note {
+  font-size: 0.88rem;
+  margin: 0.35rem 0 0;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius-xs);
+  line-height: 1.45;
+}
+.run-note p { display: inline; margin: 0; }
+
+.run-watch { background: rgba(214, 158, 46, 0.10); }
+.run-early { background: rgba(56, 161, 105, 0.10); }
+.run-stuck { background: rgba(229, 62, 62, 0.10); }
+
+/* Materials checklist -------------------------------------------- */
+.materials-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.25rem 0.85rem;
+}
+
+.materials-list li {
+  border-bottom: 1px solid var(--color-border-soft);
+  padding: 0.35rem 0;
+}
+.materials-list label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  cursor: pointer;
+  font-size: 0.94rem;
+}
+.materials-list input[type="checkbox"] {
+  margin-top: 0.22rem;
+  flex-shrink: 0;
+}
+.materials-list label span { line-height: 1.4; }
+.materials-list label span p { display: inline; margin: 0; }
+
+/* Barcodes for this session -------------------------------------- */
+.barcodes-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.barcode-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: #fff;
+  padding: 0.55rem 0.7rem;
+}
+.barcode-item strong { color: var(--color-fg-1); }
+.barcode-item p { margin: 0.1rem 0 0; font-size: 0.92rem; color: var(--color-fg-2); }
+
+/* Engineering connection ----------------------------------------- */
+.engineering-block .eng-step {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--color-primary);
+  background: var(--color-bg-warm);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-xs);
+  margin: 0 0 0.45rem;
+}
+
+/* Troubleshooting ------------------------------------------------ */
+.trouble-list { margin: 0; }
+.trouble-list dt {
+  font-weight: 700;
+  color: var(--color-fg-1);
+  margin-top: 0.55rem;
+}
+.trouble-list dt:first-child { margin-top: 0; }
+.trouble-list dd {
+  margin: 0.15rem 0 0;
+  padding-left: 0;
+  color: var(--color-fg-2);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+.trouble-list dd p { margin: 0; }

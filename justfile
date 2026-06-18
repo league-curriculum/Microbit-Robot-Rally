@@ -1,13 +1,22 @@
-# Pin Homebrew Ruby 3.3 for all recipes, so they don't depend on the shell's
-# PATH or on which `ruby` happens to be linked. Jekyll 3.10 / github-pages
-# needs Ruby 3.x; system Ruby 2.6 and Homebrew Ruby 4.0 both fail.
-export PATH := "/opt/homebrew/opt/ruby@3.3/bin:" + env_var('PATH')
+# Micro:bit Robot Rally — curriculum site (Hugo, in site/)
+#
+# The course site is Hugo. (The old Jekyll site is sequestered in _old/ as
+# reference; it is no longer the dev target.)
 
-# Install gem dependencies (bootstraps the locked bundler if needed)
-install:
-    gem install bundler:2.6.9 --conservative
-    bundle install
+# Run the Hugo dev server with live reload at http://localhost:1313
+# Override baseURL to localhost so dev serves at / (hugo.toml keeps the
+# production /Microbit-Robot-Rally/ path for GitHub Pages).
+dev:
+    hugo server --source site --baseURL http://localhost:1313/ --appendPort=false --navigateToChanged
 
-# Run the Jekyll dev server with live reload at http://localhost:4000
-dev: install
-    bundle exec jekyll serve --livereload
+# Build the static site via curik (outputs to site/public)
+build:
+    curik hugo build
+
+# Remove generated Hugo artifacts (clears stale pages from the dev server)
+clean:
+    rm -rf site/public site/resources/_gen site/.hugo_build.lock
+
+# Validate the whole course
+validate:
+    curik validate course

@@ -1,6 +1,6 @@
-baseURL = "/"
-title = "TBD"
-theme = "curriculum-hugo-theme"
+baseURL = "/Microbit-Robot-Rally/"
+title = "Micro:bit Robot Rally"
+theme = "hugo-theme-voidmain"
 enableEmoji = true
 
 # Mount course.yml as Hugo data so templates can read it
@@ -24,6 +24,7 @@ enableEmoji = true
     endLevel = 4
 
 [params]
+  description = "A modular grades 6-8 robotics and engineering course where students program the BBC Micro:bit, Cutebot, and Joystick:bit in MakeCode to build robots and compete in robot-rally games."
   copyright = "The League of Amazing Programmers"
   license = "CC BY-NC 4.0"
   curriculum_version = "0.20260617.1"

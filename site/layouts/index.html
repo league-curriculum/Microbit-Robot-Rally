@@ -1,0 +1,36 @@
+{{ define "main" }}
+<section class="session-header" data-jump="Overview">
+  <span class="eyebrow"><span>{{ .Site.Title }}</span><span class="pos">· Curriculum</span></span>
+  <h1 class="session-title">{{ .Site.Title }}</h1>
+  {{ with .Site.Params.description }}<p class="session-summary">{{ . }}</p>{{ end }}
+</section>
+
+{{ if .Content }}
+<section class="section-block" data-jump="Overview">
+  {{ .Content }}
+</section>
+{{ end }}
+
+<section class="section-block" data-jump="Modules">
+  <div class="section-head">
+    <h2>Modules</h2>
+    <span class="section-meta">{{ len (where .Site.Pages "Kind" "section") }} total</span>
+  </div>
+  <div class="content">
+    {{ range sort (where .Site.Pages "Kind" "section") "File.Path" }}
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    {{ with .Summary }}<div class="lesson-blurb">{{ . }}</div>{{ end }}
+    {{ with .Pages }}
+    <ul class="lesson-blurbs">
+      {{ range . }}
+      <li>
+        <a href="{{ .RelPermalink }}" class="lesson-link">{{ .Title }}</a>
+        {{ with .Params.description }}<div class="lesson-blurb">{{ . | markdownify }}</div>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{ end }}

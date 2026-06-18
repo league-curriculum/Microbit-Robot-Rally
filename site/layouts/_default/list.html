@@ -1,0 +1,35 @@
+{{ define "main" }}
+{{ $parts := split .Section "-" }}
+{{ $isGradeSection := and (eq (len $parts) 3) (eq (index $parts 0) "grade") }}
+<section class="session-header" data-jump="Overview">
+  <span class="eyebrow">
+    {{ if $isGradeSection }}
+    <span>Grade {{ index $parts 1 }}</span><span class="pos">· Semester {{ substr (index $parts 2) 1 1 }}</span>
+    {{ else }}
+    <span>Module</span>
+    {{ end }}
+  </span>
+  <h1 class="session-title">{{ .Title }}</h1>
+</section>
+
+{{ if .Content }}
+<section class="section-block" data-jump="Overview">
+  {{ $stripped := replaceRE "(?s)<h1[^>]*>.*?</h1>" "" (string .Content) }}
+  {{ $stripped | safeHTML }}
+</section>
+{{ end }}
+
+{{ if .Pages }}
+<section class="section-block" data-jump="Lessons">
+  <div class="section-head">
+    <h2>Lessons</h2>
+    <span class="section-meta">{{ len .Pages }} total</span>
+  </div>
+  <ul class="lesson-list">
+    {{ range .Pages }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+{{ end }}

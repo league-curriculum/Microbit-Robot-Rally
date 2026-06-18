@@ -1,0 +1,121 @@
+{{ define "main" }}
+{{ $sectionParts := split .Section "-" }}
+{{ $isGradeSection := and (eq (len $sectionParts) 3) (eq (index $sectionParts 0) "grade") }}
+{{ $grade := "" }}
+{{ $semester := "" }}
+{{ if $isGradeSection }}
+  {{ $grade = index $sectionParts 1 }}
+  {{ $semester = substr (index $sectionParts 2) 1 1 }}
+{{ end }}
+
+<section class="session-header" data-jump="Overview">
+  <span class="eyebrow">
+    {{ if $isGradeSection }}
+    <span>Grade {{ $grade }}</span>
+    <span class="pos">· Semester {{ $semester }}</span>
+    {{ with .Params.session_num }}<span class="pos">· Session {{ . }}{{ with $.Params.sessions_total }} of {{ . }}{{ end }}</span>{{ end }}
+    {{ else }}
+    <span>Lesson</span>
+    {{ with .Parent }}<span class="pos">· {{ .Title }}</span>{{ end }}
+    {{ end }}
+  </span>
+  <h1 class="session-title">{{ .Title }}</h1>
+  {{ with .Params.description }}<p class="session-summary">{{ . }}</p>{{ end }}
+
+  {{ if or .Params.duration_min .Params.prog_level .Params.run_sheet }}
+  <div class="at-a-glance">
+    {{ with .Params.duration_min }}<span class="glance-badge"><span class="glance-label">Duration</span><span class="glance-value">{{ . }} min</span></span>{{ end }}
+    {{ if $isGradeSection }}<span class="glance-badge"><span class="glance-label">Grade</span><span class="glance-value">Grade {{ $grade }}</span></span>{{ end }}
+    {{ with .Params.prog_level }}<span class="glance-badge"><span class="glance-label">Programming</span><span class="glance-value">{{ . }}</span></span>{{ end }}
+    <span class="glance-badge"><span class="glance-label">Devices</span><span class="glance-value">{{ if .Params.devices_required }}Yes{{ else }}No{{ end }}</span></span>
+    {{ with .Params.prep_min }}<span class="glance-badge"><span class="glance-label">Prep</span><span class="glance-value">{{ . }} min</span></span>{{ end }}
+    {{ with .Params.run_sheet }}<span class="glance-badge"><span class="glance-label">Segments</span><span class="glance-value">{{ len . }}</span></span>{{ end }}
+  </div>
+  {{ end }}
+</section>
+
+{{ with .Params.opening_concept }}
+<section class="section-block opening-concept" data-jump="Opening">
+  <div class="section-head"><h2>Opening Concept</h2></div>
+  <div class="opening-text">{{ . | markdownify }}</div>
+</section>
+{{ end }}
+
+{{ with .Params.run_sheet }}
+<section class="section-block run-sheet" data-jump="Run Sheet">
+  <div class="section-head">
+    <h2>Run Sheet</h2>
+    <span class="section-meta">{{ len . }} segments · {{ $.Params.duration_min }} min</span>
+  </div>
+  <ol class="run-segments">
+    {{ range . }}
+    <li class="run-segment">
+      <div class="run-segment-head">
+        <span class="run-time">{{ .time }}</span>
+        <span class="run-name">{{ .name }}</span>
+        {{ with .pl_activity }}<span class="run-pl">{{ . }}</span>{{ end }}
+      </div>
+      {{ with .cue }}<p class="run-cue">{{ . | markdownify }}</p>{{ end }}
+      {{ with .details }}
+      <ul class="run-details">
+        {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
+      </ul>
+      {{ end }}
+      {{ with .watch_for }}<p class="run-note run-watch"><strong>Watch for:</strong> {{ . | markdownify }}</p>{{ end }}
+      {{ with .if_early }}<p class="run-note run-early"><strong>If they finish early:</strong> {{ . | markdownify }}</p>{{ end }}
+      {{ with .if_stuck }}<p class="run-note run-stuck"><strong>If they're stuck:</strong> {{ . | markdownify }}</p>{{ end }}
+    </li>
+    {{ end }}
+  </ol>
+</section>
+{{ end }}
+
+{{ with .Params.materials }}
+<section class="section-block materials" data-jump="Materials">
+  <div class="section-head"><h2>Materials</h2></div>
+  <ul class="materials-list">
+    {{ range . }}<li><label><input type="checkbox"> <span>{{ . | markdownify }}</span></label></li>{{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{ with .Params.barcodes }}
+<section class="section-block barcodes" data-jump="Barcodes">
+  <div class="section-head"><h2>Barcodes for This Session</h2></div>
+  <ul class="barcodes-list">
+    {{ range . }}
+    <li class="barcode-item">
+      <strong>{{ .name }}</strong>
+      {{ with .description }}<p>{{ . | markdownify }}</p>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
+
+{{ with .Params.engineering }}
+<section class="section-block engineering-block" data-jump="Engineering">
+  <div class="section-head"><h2>Engineering Connection</h2></div>
+  {{ with .step }}<p class="eng-step">{{ . }}</p>{{ end }}
+  {{ with .body }}<div>{{ . | markdownify }}</div>{{ end }}
+</section>
+{{ end }}
+
+{{ with .Params.troubleshooting }}
+<section class="section-block troubleshooting" data-jump="Troubleshooting">
+  <div class="section-head"><h2>Troubleshooting</h2></div>
+  <dl class="trouble-list">
+    {{ range . }}
+    <dt>{{ .issue }}</dt>
+    <dd>{{ .fix | markdownify }}</dd>
+    {{ end }}
+  </dl>
+</section>
+{{ end }}
+
+{{ if .Content }}
+<section class="section-block content" data-jump="Notes">
+  {{ .Content }}
+</section>
+{{ end }}
+{{ end }}
