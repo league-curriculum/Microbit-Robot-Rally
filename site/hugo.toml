@@ -11,6 +11,11 @@ enableEmoji = true
 [[module.mounts]]
   source = "../course.yml"
   target = "data/course.yml"
+# Re-add the default data/ mount (declaring module.mounts disables it otherwise),
+# so generated site/data/parts3d.json loads as .Site.Data.parts3d.
+[[module.mounts]]
+  source = "data"
+  target = "data"
 
 [markup]
   [markup.goldmark.renderer]

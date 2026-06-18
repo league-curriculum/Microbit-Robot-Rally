@@ -28,6 +28,17 @@ jobs:
           hugo-version: "latest"
           extended: true
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Generate 3D Parts (STL + previews)
+        run: |
+          cd tools/render-parts
+          npm install --no-audit --no-fund
+          npm run generate
+
       - name: Build
         run: hugo --minify --source site
 

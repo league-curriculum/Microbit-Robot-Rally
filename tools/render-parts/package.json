@@ -1,0 +1,15 @@
+{
+  "name": "render-parts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Generate STL files + 3/4-view SVG previews from Parts Designer URLs for the 3D Parts section.",
+  "scripts": {
+    "build-bundle": "tsc -p tsconfig.json",
+    "generate": "npm run build-bundle && node generate.mjs"
+  },
+  "devDependencies": {
+    "node-html-parser": "^6.1.13",
+    "typescript": "^5.4.5"
+  }
+}

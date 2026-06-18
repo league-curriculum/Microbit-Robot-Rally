@@ -1,0 +1,20 @@
+{{- $group := .Get 0 -}}
+{{- $items := index .Site.Data.parts3d $group -}}
+{{- if $items -}}
+<div class="part-grid">
+  {{- range $items }}
+  <div class="part-card">
+    <a class="part-preview" href="{{ .editUrl }}" title="Edit {{ .name }} in Parts Designer">
+      {{- if .hasPreview }}<img src="{{ (printf "parts/%s.png" .slug) | relURL }}" alt="{{ .name }} preview" loading="lazy" width="320" height="320">{{ end -}}
+    </a>
+    <div class="part-name">{{ .name }}</div>
+    <div class="part-actions">
+      <a class="part-dl" href="{{ (printf "parts/%s.stl" .slug) | relURL }}" download>&#8595; STL</a>
+      <a class="part-edit" href="{{ .editUrl }}" target="_blank" rel="noopener">&#9998; Edit</a>
+    </div>
+  </div>
+  {{- end }}
+</div>
+{{- else -}}
+<p><em>No parts found for group "{{ $group }}". Run <code>just parts</code> to generate them.</em></p>
+{{- end -}}

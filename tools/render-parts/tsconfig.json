@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "lib": ["ES2021", "DOM"],
+    "module": "none",
+    "outFile": "build/vendor-bundle.js",
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "noEmitOnError": false,
+    "strict": false
+  },
+  "files": [
+    "globals.d.ts",
+    "vendor/config.ts",
+    "vendor/functions.ts",
+    "vendor/geometry/Vector3.ts",
+    "vendor/geometry/Matrix4.ts",
+    "vendor/geometry/Quaternion.ts",
+    "vendor/geometry/Ray.ts",
+    "vendor/geometry/Triangle.ts",
+    "vendor/geometry/TriangleWithNormals.ts",
+    "vendor/geometry/VectorDictionary.ts",
+    "vendor/geometry/Mesh.ts",
+    "vendor/model/enums/BlockType.ts",
+    "vendor/model/enums/Orientation.ts",
+    "vendor/model/enums/Quadrant.ts",
+    "vendor/measurements.ts",
+    "vendor/model/Block.ts",
+    "vendor/model/SmallBlock.ts",
+    "vendor/model/TinyBlock.ts",
+    "vendor/model/PerpendicularRoundedAdaper.ts",
+    "vendor/model/Part.ts",
+    "vendor/MeshGenerator.ts",
+    "vendor/PartMeshGenerator.ts",
+    "vendor/export/STLExporter.ts"
+  ]
+}
